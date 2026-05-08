@@ -1,0 +1,46 @@
+# opspilot-scoop — Scoop bucket (Windows)
+
+> **DO NOT hand-edit the manifest.** It is auto-pushed by GoReleaser
+> on every CLI release tag from `msrashed2018/opspilot-cli`.
+
+## Repo purpose
+
+Scoop bucket for the [OpsPilot CLI](https://opspilot.msrashed.com/cli.html)
+on Windows.
+
+## Why this repo is public
+
+Scoop buckets are conventionally public — `scoop bucket add` clones
+the repo unauthenticated. The CLI source itself stays private at
+`msrashed2018/opspilot-cli`.
+
+## Install (end-user)
+
+```powershell
+scoop bucket add opspilot https://github.com/msrashed2018/opspilot-scoop
+scoop install opspilot
+```
+
+## How releases work
+
+Same pipeline as `homebrew-opspilot`: GoReleaser pushes the manifest
+to this repo via the `SCOOP_BUCKET_TOKEN` PAT on every CLI tag. See
+[`opspilot-cli/.goreleaser.yaml`](https://github.com/msrashed2018/opspilot-cli/blob/main/.goreleaser.yaml)
+`scoops:` block.
+
+## What lives here
+
+- `bucket/opspilot.json` — the auto-generated Scoop manifest.
+- `LICENSE` — Apache 2.0.
+- `NOTICE`, `README.md`.
+
+## If something breaks
+
+1. Verify GoReleaser pushed (recent `goreleaserbot` commit in log).
+2. Verify the CLI release uploaded Windows binaries.
+3. SHA-256 checksums in the manifest must match — GoReleaser handles
+   this; rerun the release workflow if drift detected.
+
+## License
+
+Apache 2.0.
