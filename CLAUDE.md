@@ -1,4 +1,4 @@
-# opspilot-scoop — Scoop bucket (Windows)
+# veirox-scoop — Scoop bucket (Windows)
 
 > **DO NOT hand-edit the manifest.** It is auto-pushed by GoReleaser
 > on every CLI release tag from `veirox-cloud/veirox-cli`.
@@ -18,19 +18,19 @@ the repo unauthenticated. The CLI source itself stays private at
 
 ```powershell
 scoop bucket add veirox https://github.com/veirox-cloud/veirox-scoop
-scoop install opspilot
+scoop install veirox
 ```
 
 ## How releases work
 
-Same pipeline as `homebrew-opspilot`: GoReleaser pushes the manifest
+Same pipeline as `homebrew-veirox`: GoReleaser pushes the manifest
 to this repo via the `SCOOP_BUCKET_TOKEN` PAT on every CLI tag. See
-[`opspilot-cli/.goreleaser.yaml`](https://github.com/veirox-cloud/veirox-cli/blob/main/.goreleaser.yaml)
+[`veirox-cli/.goreleaser.yaml`](https://github.com/veirox-cloud/veirox-cli/blob/main/.goreleaser.yaml)
 `scoops:` block.
 
 ## What lives here
 
-- `bucket/opspilot.json` — the auto-generated Scoop manifest.
+- `bucket/veirox.json` — the auto-generated Scoop manifest.
 - `LICENSE` — Apache 2.0.
 - `NOTICE`, `README.md`.
 
