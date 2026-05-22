@@ -1,0 +1,15 @@
+{
+    "version": "0.0.2",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/veirox-cloud/veirox-dist/releases/download/v0.0.2/veirox_0.0.2_windows_amd64.zip",
+            "bin": [
+                "veirox.exe"
+            ],
+            "hash": "04edc797b89fd30cb8eb553db94022b9f2477c1bc12e4f93def2ec4d42bfface"
+        }
+    },
+    "homepage": "https://veirox.com",
+    "license": "Apache-2.0",
+    "description": "Veirox CLI"
+}
