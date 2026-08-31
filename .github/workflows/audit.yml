@@ -43,9 +43,12 @@ jobs:
           Invoke-RestMethod get.scoop.sh | Invoke-Expression
           echo "$env:USERPROFILE\scoop\shims" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
 
+      # `scoop bucket add` wants a real git URL, not a bare local path —
+      # installing directly from the manifest file is the simpler,
+      # equally-real proof (same manifest-parsing/download/install code
+      # path `scoop install veirox` takes once the bucket is added).
       - name: Install + smoke test (the real end-to-end proof)
         shell: pwsh
         run: |
-          scoop bucket add veirox "$pwd"
-          scoop install veirox
+          scoop install ./veirox.json
           veirox version --short
