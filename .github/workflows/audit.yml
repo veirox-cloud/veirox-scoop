@@ -1,0 +1,43 @@
+name: Validate manifest
+
+# GoReleaser pushes directly to main (no PR) on every veirox-cli release
+# tag, so this runs post-hoc on every push rather than gating a merge —
+# its job is to catch a broken manifest fast, not to block the push.
+#
+# Deliberately GitHub-hosted, not the workspace's usual self-hosted
+# droplet runner (see ../../../.claude/rules/self-hosted-runner.md):
+# there is no self-hosted Windows runner, and Scoop only exists on
+# Windows. GitHub Actions is free and unlimited on public repos
+# regardless of runner OS, so this costs nothing either way —
+# windows-latest is simply the only option that can do the job.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: JSON syntax + required-fields check
+        shell: pwsh
+        run: |
+          $manifest = Get-Content -Raw veirox.json | ConvertFrom-Json
+          foreach ($field in @("version", "homepage", "license", "description", "architecture")) {
+            if (-not $manifest.PSObject.Properties.Name.Contains($field)) {
+              throw "manifest missing required field: $field"
+            }
+          }
+          Write-Host "manifest OK, version $($manifest.version)"
+
+      - name: Install + smoke test (the real end-to-end proof)
+        shell: pwsh
+        run: |
+          scoop bucket add veirox "$pwd"
+          scoop install veirox
+          veirox version --short
