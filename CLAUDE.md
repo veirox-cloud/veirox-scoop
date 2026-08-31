@@ -30,7 +30,11 @@ to this repo via the `SCOOP_BUCKET_TOKEN` PAT on every CLI tag. See
 
 ## What lives here
 
-- `bucket/veirox.json` — the auto-generated Scoop manifest.
+- `veirox.json` — the auto-generated Scoop manifest (ONE file, at repo
+  root — `veirox-cli/.goreleaser.yaml`'s `scoops:` block sets no
+  `folder:`, so GoReleaser writes it to the root, not `bucket/`).
+- `CHANGELOG.md` — Keep-a-Changelog style; only worth updating for a
+  real behavioral change to this bucket, not every manifest bump.
 - `LICENSE` — Apache 2.0.
 - `NOTICE`, `README.md`.
 
