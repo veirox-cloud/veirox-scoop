@@ -50,5 +50,5 @@ jobs:
       - name: Install + smoke test (the real end-to-end proof)
         shell: pwsh
         run: |
-          scoop install ./veirox.json
+          scoop install "$(Resolve-Path veirox.json)"
           veirox version --short
