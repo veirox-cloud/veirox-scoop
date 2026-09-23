@@ -3,6 +3,8 @@
 > **DO NOT hand-edit the manifest.** It is auto-pushed by GoReleaser
 > on every CLI release tag from `veirox-cloud/veirox-cli`.
 
+`AGENTS.md` in this directory is a symlink to this file: Claude Code, Codex, Copilot and every other agent read the identical text, so edit `CLAUDE.md` only and never keep a separate copy.
+
 ## Repo purpose
 
 Scoop bucket for the [Veirox CLI](https://veirox.com/cli.html)
