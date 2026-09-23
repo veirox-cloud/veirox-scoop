@@ -5,7 +5,7 @@ name: Validate manifest
 # its job is to catch a broken manifest fast, not to block the push.
 #
 # Deliberately GitHub-hosted, not the workspace's usual self-hosted
-# droplet runner (see ../../../.claude/rules/self-hosted-runner.md):
+# droplet runner (see ../../../veirox-infra/CLAUDE.md):
 # there is no self-hosted Windows runner, and Scoop only exists on
 # Windows. GitHub Actions is free and unlimited on public repos
 # regardless of runner OS, so this costs nothing either way —
