@@ -1,12 +1,12 @@
 {
-    "version": "0.3.2",
+    "version": "0.4.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/veirox-cloud/veirox-dist/releases/download/v0.3.2/veirox_0.3.2_windows_amd64.zip",
+            "url": "https://github.com/veirox-cloud/veirox-dist/releases/download/v0.4.0/veirox_0.4.0_windows_amd64.zip",
             "bin": [
                 "veirox.exe"
             ],
-            "hash": "3569ba1c42b076c5a9bd76c461143caf274ae5cd2d5c4ac6fbd619e2a7bd2e4d"
+            "hash": "9cc4a12475f0806f2b49d34d2007781378b6ed61c97931cf9aee092a5597b180"
         }
     },
     "homepage": "https://veirox.com",
